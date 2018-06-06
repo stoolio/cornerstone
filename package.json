@@ -12,11 +12,11 @@
     "foundation-sites": "^5.5.3",
     "jquery": "^3.3.1",
     "jquery-migrate": "^1.4.1",
-    "jstree": "vakata/jstree",
+    "jstree": "github:vakata/jstree",
     "lazysizes": "3.0.0",
     "lodash": "^4.17.4",
     "nod-validate": "^2.0.12",
-    "pace": "hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
+    "pace": "github:hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
     "slick-carousel": "^1.8.1",
     "svg-injector": "^1.1.3",
     "sweetalert2": "^6.10.1"
