@@ -3,6 +3,13 @@
         {{> components/common/quick-search}}
     </div>
     <ul class="navPages-list{{#if theme_settings.navigation_design '!==' 'simple'}} navPages-list-depth-max{{/if}}">
+        {{#unless theme_settings.hide_content_navigation}}
+            {{#each (before pages 2)}}
+                <li class="navPages-item">
+                    {{> components/common/navigation-list-page}}
+                </li>
+            {{/each}}
+        {{/unless}}
         {{#each categories}}
             <li class="navPages-item">
             {{#if ../theme_settings.navigation_design '===' 'simple'}}
@@ -14,7 +21,7 @@
             </li>
         {{/each}}
         {{#unless theme_settings.hide_content_navigation}}
-            {{#each pages}}
+            {{#each (after pages 2)}}
                  <li class="navPages-item navPages-item-page">
                      <a class="navPages-action" href="{{url}}">{{name}}</a>
                  </li>
