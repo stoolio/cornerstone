@@ -1,0 +1,191 @@
+@import "nouislider"
+
+// #colorSlider {
+//   .noUi-pips > .noUi-value {
+//     width: 14.285714285714286%;
+//   }
+// }
+// #claritySlider {
+//   .noUi-pips > .noUi-value {
+//     width: 12.5%;
+//   }
+// }
+// #cutSlider {
+//   .noUi-pips > .noUi-value {
+//     width: 25%;
+//   }
+// }
+
+.form-field {
+  select, input {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.slider-container {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 3rem;
+  font-size: 20px;
+}
+
+#sliders-container {
+  hr {
+    margin: 5px 0px;
+  }
+}
+
+.noUi-value {
+  color: black;
+  font-weight: bold;
+
+  &.noUi-value-sub {
+    font-size: 15px;
+  }
+
+  &.noUi-value-large {
+    font-size: 16px;
+  }
+}
+
+#priceSlider, #caratSlider {
+  .noUi-pips-horizontal {
+    // border: 1px solid red;
+    height: 45px;
+  }
+}
+
+.rangeSlider {
+  .noUi-marker-normal {
+    // z-index: 2;
+    transform: scale(1.5, 3) translateY(1.5px);
+    background-color: white;
+  }
+
+  .noUi-handle {
+    z-index: 10 !important;
+  }
+
+  .noUi-pips-horizontal {
+    z-index: 2;
+    height: 35px !important;
+    transform: translateY(-1.25em);
+  }
+
+  .noUi-pips {
+    > .noUi-value {
+      padding-top: 20px;
+      bottom: 10px;
+      // debug border
+      // border: 1px solid red;
+      z-index: 5;
+      font-weight: bold;
+    }
+
+    .noUi-marker-large {
+      display: none;
+    }
+
+    .noUi-marker-normal:first-child {
+      display: none;
+    }
+    .noUi-marker-normal:last-child {
+      display: none;
+    }
+  }
+}
+
+.noUi-connect {
+  z-index: 1;
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 78%,#7db9e8 100%);
+  height: 110%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.noUi-base {
+  background-color: lightblue;
+}
+
+.slider-row {
+  @include grid-row();
+
+  .slider-container {
+    @include grid-column($columns:12,$center:true);
+    // width: 90%;
+    // margin: auto;
+    // margin-bottom: 3rem;
+    font-size: 20px;
+  }
+}
+
+.slider-input-row {
+  @include grid-row($behavior:collapse);
+
+  .slider-input {
+    @include grid-column($columns:3);
+  }
+
+  .dash {
+    @include grid-column($columns:1);
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: center;
+
+    &.dash--select {
+      padding: 0;
+    }
+  }
+}
+
+.postfix-group {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  @include grid-row($behavior:collapse);
+
+  .postfix-input {
+    @include grid-column($columns:9);
+
+    .carat {
+      text-align: right;
+    }
+
+    .price {
+      text-align: left;
+    }
+  }
+
+  .postfix-prefix, .postfix-postfix {
+    @include prefix-postfix-base();
+    font-size: 20px;
+    height: 29px;
+    line-height: 29px;
+  }
+
+  .postfix-prefix {
+    @include prefix();
+    @include grid-column($columns:2);
+    text-align: right;
+    padding: 0px 4px 0px 0px;
+  }
+
+  .postfix-postfix {
+    @include postfix();
+    @include grid-column($columns:3);
+    text-align: left;
+    padding: 0px 0px 0px 4px;
+  }
+}
+
+.label-wrap {
+  padding: 0px 10px 5px 0px;
+  text-align: center;
+
+  label {
+    font-weight: bold;
+    font-size: 22px;
+  }
+}

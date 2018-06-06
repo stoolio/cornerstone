@@ -1,0 +1,216 @@
+<div class='form-row form-row--half'>
+  <label class='form-field' style='width: 20%;'>
+  <div style='font-size:22px;font-weight:bold;text-align: center'>Shape</div>
+  <ul class='shape-block-grid' id='shape-selector'>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/round.png'}}">
+      <span class='name'>Round</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/princess.png'}}">
+      <span class='name'>Princess</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/radiant.png'}}">
+      <span class='name'>Radiant</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/cushion.png'}}">
+      <span class='name'>Cushion</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/oval.png'}}">
+      <span class='name'>Oval</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/emerald.png'}}">
+      <span class='name'>Emerald</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/marquise.png'}}">
+      <span class='name'>Marquise</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/asscher.png'}}">
+      <span class='name'>Asscher</span>
+    </li>
+    <li>
+      <img class='shape' src="{{cdn 'assets/img/diamond/pear.png'}}">
+      <span class='name'>Pear</span>
+    </li>
+    <li>
+      <div class='shape'>?</div>
+      <span class='name'>Other</span>
+    </li>
+  </ul>
+  <select id='shape-list' name='shape[]' size='7' multiple='true' style='display: none'>
+    <option value='Round'>Round</option>
+    <option value='Princess'>Princess</option>
+    <option value='Radiant'>Radiant</option>
+    <option value='Cushion'>Cushion</option>
+    <option value='Oval'>Oval</option>
+    <option value='Emerald'>Emerald</option>
+    <option value='Marquise'>Marquise</option>
+    <option value='Asscher'>Asscher</option>
+    <option value='Pear'>Pear</option>
+    <option value='Other'>Other</option>
+  </select>
+</label>
+<div class='form-field' id='sliders-container' style='width: 80%'>
+  <div id='caratSlider'>
+    <div class='label-wrap'><label>Size</label></div>
+    <div class='form-row'>
+      <div class='slider-container'>
+        <div class='slider'></div>
+      </div>
+    </div>
+    <div class='slider-input-row'>
+      <div class='slider-input postfix-group'>
+        <input class='postfix-input from'>
+        <label class='postfix-postfix'>ct</label>
+      </div>
+      <div class='dash'>
+        &mdash;
+      </div>
+      <div class='slider-input postfix-group'>
+        <input class='postfix-input to'>
+        <label class='postfix-postfix postfix-to'>ct</label>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class='rangeSlider' id='colorSlider'>
+    <div class='label-wrap'><label>Color</label></div>
+    <div class='form-row'>
+      <div class='slider-container'>
+        <div class='slider'></div>
+      </div>
+    </div>
+    <div class='slider-input-row'>
+      <div class='slider-input'>
+        <select class='from'>
+          <optgroup label='Colorless'>
+            <option selected value='D'>D</option>
+            <option value='E'>E</option>
+            <option value='F'>F</option>
+          </optgroup>
+          <optgroup label='Near Colorless'>
+            <option value='G'>G</option>
+            <option value='H'>H</option>
+            <option value='I'>I</option>
+            <option value='J'>J</option>
+          </optgroup>
+        </select>
+      </div>
+      <div class='dash dash--select'>
+        &mdash;
+      </div>
+      <div class='slider-input'>
+        <select class='to'>
+          <optgroup label='Colorless'>
+            <option value='D'>D</option>
+            <option value='E'>E</option>
+            <option value='F'>F</option>
+          </optgroup>
+          <optgroup label='Near Colorless'>
+            <option value='G'>G</option>
+            <option value='H'>H</option>
+            <option value='I'>I</option>
+            <option selected value='J'>J</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class='rangeSlider' id='claritySlider'>
+    <div class='label-wrap'><label>Clarity</label></div>
+    <div class='form-row'>
+      <div class='slider-container'>
+        <div class='slider'></div>
+      </div>
+    </div>
+    <div class='slider-input-row'>
+      <div class='slider-input'>
+        <select class='from'>
+          <option selected value='FL'>FL</option>
+          <option value='IF'>IF</option>
+          <option value='VVS1'>VVS1</option>
+          <option value='VVS2'>VVS2</option>
+          <option value='VS1'>VS1</option>
+          <option value='VS2'>VS2</option>
+          <option value='SI1'>SI1</option>
+          <option value='SI2'>SI2</option>
+        </select>
+      </div>
+      <div class='dash dash--select'>
+        &mdash;
+      </div>
+      <div class='slider-input'>
+        <select class='to'>
+          <option value='FL'>FL</option>
+          <option value='IF'>IF</option>
+          <option value='VVS1'>VVS1</option>
+          <option value='VVS2'>VVS2</option>
+          <option value='VS1'>VS1</option>
+          <option value='VS2'>VS2</option>
+          <option value='SI1'>SI1</option>
+          <option selected value='SI2'>SI2</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <hr />
+  <div class='rangeSlider' id='cutSlider'>
+    <div class='label-wrap'><label>Cut</label></div>
+    <div class='form-row'>
+      <div class='slider-container'>
+        <div class='slider'></div>
+      </div>
+    </div>
+    <div class='slider-input-row'>
+      <div class='slider-input'>
+        <select class='from'>
+          <option selected value='ID'>Ideal</option>
+          <option value='EX'>Excellent</option>
+          <option value='G'>Good</option>
+          <option value='VG'>Very Good</option>
+        </select>
+      </div>
+      <div class='dash dash--select'>
+        &mdash;
+      </div>
+      <div class='slider-input'>
+        <select class='to'>
+          <option value='ID'>Ideal</option>
+          <option value='EX'>Excellent</option>
+          <option value='G'>Good</option>
+          <option selected value='VG'>Very Good</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='form-row'>
+  <div class='label-wrap'><label>Price</label></div>
+  <div id='priceSlider'>
+    <div class='slider-row'>
+      <div class='slider-container'>
+        <div class='slider'></div>
+      </div>
+    </div>
+    <div class='slider-input-row'>
+      <div class='slider-input postfix-group'>
+        <label class='postfix-prefix'>$</label>
+        <input class='postfix-input from'>
+      </div>
+      <div class='dash'>
+        &mdash;
+      </div>
+      <div class='slider-input postfix-group'>
+        <label class='postfix-prefix'>$</label>
+        <input class='postfix-input to'>
+      </div>
+    </div>
+  </div>
+</div>
