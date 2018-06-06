@@ -1,9 +1,10 @@
 # Changelog
 
 ## Draft
+
+## 2.1.0 (2018-06-01)
 - Add Newsletter summary section to subscription form. [#1248](https://github.com/bigcommerce/cornerstone/pull/1248)
 - Show retail price range with strikethrough. [#1199](https://github.com/bigcommerce/cornerstone/pull/1199)
-- Fix quantity edit on Simple Product AMP pages. [#1242](https://github.com/bigcommerce/cornerstone/pull/1242)
 - Fix for individual low inventory count for SKUs. [#1234](https://github.com/bigcommerce/cornerstone/pull/1234)
 - Avoid undefined context in WishList instance. [#1247](https://github.com/bigcommerce/cornerstone/pull/1247)
 
