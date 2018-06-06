@@ -63,3 +63,7 @@
     -webkit-overflow-scrolling: touch;
     padding: $reveal-modal-padding;
 }
+
+.modal.toback {
+  z-index: 1003;
+}

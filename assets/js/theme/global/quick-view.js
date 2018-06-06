@@ -5,6 +5,7 @@ import utils from '@bigcommerce/stencil-utils';
 import ProductDetails from '../common/product-details';
 import { defaultModal } from './modal';
 import 'slick-carousel';
+import initializeInquireModal from './inquire-modal';
 
 export default function (context) {
     const modal = defaultModal();
@@ -26,4 +27,6 @@ export default function (context) {
             return new ProductDetails(modal.$content.find('.quickView'), context);
         });
     });
+
+    initializeInquireModal();
 }

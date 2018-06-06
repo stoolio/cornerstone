@@ -468,7 +468,7 @@
             "email": "Email Address",
             "company": "Company Name",
             "phone": "Phone Number",
-            "order": "Order Number",
+            "order": "Product ID",
             "rma": "RMA Number",
             "question": "Comments/Questions",
             "submit": "Submit Form",
