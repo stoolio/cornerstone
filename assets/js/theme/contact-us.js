@@ -7,17 +7,17 @@ import initializeSliders from './common/diamond-inquiry';
 function dummy() {};
 
 export default class ContactUs extends PageManager {
-    onReady() {
-        this.registerContactFormValidation();
-        ifDiamondInquiry(initializeSliders);
-    }
-
     ifDiamondInquiry(cb = dummy) {
       if ($('#contact_rma').length > 0) {
         cb();
         return true;
       }
       return false;
+    }
+
+    onReady() {
+        this.registerContactFormValidation();
+        this.ifDiamondInquiry(initializeSliders);
     }
 
     serializeSliderData() {
@@ -75,7 +75,7 @@ export default class ContactUs extends PageManager {
             contactUsValidator.performCheck();
 
             if (contactUsValidator.areAll('valid')) {
-                ifDiamondInquiry(serializeSliderData);
+                this.ifDiamondInquiry(this.serializeSliderData);
                 return;
             }
 
