@@ -2,3 +2,5 @@
 /assets/dist
 stencil.conf.js
 webpack.conf.js
+
+/assets/js/theme/common/nouislider.js
