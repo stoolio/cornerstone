@@ -1,9 +1,7 @@
 import $ from 'jquery';
 import foundation from './foundation';
 
-Foundation.libs.reveal.settings.multiple_opened = true;
-
-var activeModals = 0;
+let activeModals = 0;
 
 const bodyActiveClass = 'has-activeModal';
 const loadingOverlayClass = 'loadingOverlay';
@@ -202,8 +200,9 @@ export class Modal {
     }
 
     onModalClose() {
-      if (activeModals === 1)
-        $('body').removeClass(bodyActiveClass);
+        if (activeModals === 1) {
+            $('body').removeClass(bodyActiveClass);
+        }
     }
 
     onModalClosed() {
@@ -213,8 +212,9 @@ export class Modal {
     }
 
     onModalOpen() {
-      if (activeModals === 0)
-        $('body').addClass(bodyActiveClass);
+        if (activeModals === 0) {
+            $('body').addClass(bodyActiveClass);
+        }
     }
 
     onModalOpened() {

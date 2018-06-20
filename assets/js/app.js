@@ -60,6 +60,8 @@ const pageClasses = {
 window.stencilBootstrap = function stencilBootstrap(pageType, contextJSON = null, loadGlobal = true) {
     const context = JSON.parse(contextJSON || '{}');
 
+    window.Foundation.libs.reveal.settings.multiple_opened = true;
+
     return {
         load() {
             $(async () => {

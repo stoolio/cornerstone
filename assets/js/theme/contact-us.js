@@ -4,15 +4,15 @@ import $ from 'jquery';
 import forms from './common/models/forms';
 import initializeSliders from './common/diamond-inquiry';
 
-function dummy() {};
+function dummy() {}
 
 export default class ContactUs extends PageManager {
     ifDiamondInquiry(cb = dummy) {
-      if ($('#contact_rma').length > 0) {
-        cb();
-        return true;
-      }
-      return false;
+        if ($('#contact_rma').length > 0) {
+            cb();
+            return true;
+        }
+        return false;
     }
 
     onReady() {
@@ -21,26 +21,28 @@ export default class ContactUs extends PageManager {
     }
 
     serializeSliderData() {
-        var caratFrom = $('#caratSlider .from').val(),
-            caratTo = $('#caratSlider .to').val(),
-            colorFrom = $('#colorSlider .from').val(),
-            colorTo = $('#colorSlider .to').val(),
-            clarityFrom = $('#claritySlider .from').val(),
-            clarityTo = $('#claritySlider .to').val(),
-            cutFrom = $('#cutSlider .from').val(),
-            cutTo = $('#cutSlider .to').val(),
-            priceFrom = $('#priceSlider .from').val(),
-            priceTo = $('#priceSlider .to').val(),
-            shapes = $('#shape-list').val().join(', ');
+        const caratFrom = $('#caratSlider .from').val();
+        const caratTo = $('#caratSlider .to').val();
+        const colorFrom = $('#colorSlider .from').val();
+        const colorTo = $('#colorSlider .to').val();
+        const clarityFrom = $('#claritySlider .from').val();
+        const clarityTo = $('#claritySlider .to').val();
+        const cutFrom = $('#cutSlider .from').val();
+        const cutTo = $('#cutSlider .to').val();
+        const priceFrom = $('#priceSlider .from').val();
+        const priceTo = $('#priceSlider .to').val();
+        const shapes = $('#shape-list').val().join(', ');
 
-        var data = `Shape: ${shapes}\n`;
+        let data = `Shape: ${shapes}\n`;
         data += `Size: ${caratFrom}-${caratTo}\n`;
         data += `Color: ${colorFrom}-${colorTo}\n`;
         data += `Clairty: ${clarityFrom}-${clarityTo}\n`;
         data += `Cut: ${cutFrom}-${cutTo}\n`;
         data += `Budget: ${priceFrom}-${priceTo}`;
 
-        $('form[data-contact-form] textarea[name="contact_question"]').val($('form[data-contact-form] textarea[name="contact_question"]').val() + `\n\n ${data}`);
+        const textBox = $('form[data-contact-form] textarea[name="contact_question"]');
+
+        textBox.val(`${textBox.val()}\n\n\n\n${data}`);
     }
 
     registerContactFormValidation() {
