@@ -1,6 +1,6 @@
 {
   "name": "Cornerstone",
-  "version": "2.1.0",
+  "version": "2.2.0-rc.1",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -68,6 +68,7 @@
     "show_accept_paypal": false,
     "show_accept_visa": false,
     "show_product_details_tabs": true,
+    "show_product_reviews_tabs": false,
     "show_product_weight": true,
     "show_product_dimensions": false,
     "product_list_display_mode": "grid",
@@ -288,7 +289,11 @@
     "geotrust_ssl_common_name": "",
     "geotrust_ssl_seal_size": "M",
     "navigation_design": "simple",
-    "price_ranges": true
+    "price_ranges": true,
+    "pdp-price-label": "",
+    "pdp-sale-price-label": "Now:",
+    "pdp-non-sale-price-label": "Was:",
+    "pdp-retail-price-label": "MSRP:"
   },
   "read_only_files": [
     "/assets/scss/components/citadel",
