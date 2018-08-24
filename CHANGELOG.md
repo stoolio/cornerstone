@@ -1,6 +1,36 @@
 # Changelog
 
 ## Draft
+- Require Webpack config only when used (reduce time to be ready for receiving messages from stencil-cli). [#1334](https://github.com/bigcommerce/cornerstone/pull/1334)
+
+## 2.3.2 (2018-08-17)
+- Fix zoom behavior for small images in gallery (turn off zoom if image is too small). [#1325](https://github.com/bigcommerce/cornerstone/pull/1325)
+- Undo New Products left align from 2.3.0. [#1328](https://github.com/bigcommerce/cornerstone/pull/1328)
+- Fix invoice store logo. [#1326](https://github.com/bigcommerce/cornerstone/pull/1326)
+
+## 2.3.1 (2018-08-03)
+- Fix for review tabs not appearing. [#1322](https://github.com/bigcommerce/cornerstone/pull/1322)
+
+## 2.3.0 (2018-08-02)
+- Open correct product page tabs when URL contains a fragment identifier referring to that content [#1304](https://github.com/bigcommerce/cornerstone/pull/1304)
+- Display product reviews in tabbed content region of product page. [#1302](https://github.com/bigcommerce/cornerstone/pull/1302)
+- Show bulk discounts only if enabled through store settings. [#1310](https://github.com/bigcommerce/cornerstone/pull/1310)
+- Corrects mini cart display issues [#1298](https://github.com/bigcommerce/cornerstone/pull/1298)
+- Style active section in search results. [#1316](https://github.com/bigcommerce/cornerstone/pull/1316)
+- Fix blog_post import statement in app.js [#1301](https://github.com/bigcommerce/cornerstone/pull/1301)
+- Show carousel dots only when carousel has more than one slide. [#1319](https://github.com/bigcommerce/cornerstone/pull/1319)
+- New products left align. [1321](https://github.com/bigcommerce/cornerstone/pull/1321)
+- Fix initial aria attributes for 'Customers Also Viewed' products tab [#1290](https://github.com/bigcommerce/cornerstone/pull/1290)
+
+## 2.2.1 (2018-07-10)
+- Fix wishlist dropdown background color bleeding out of container [#1283](https://github.com/bigcommerce/cornerstone/pull/1283)
+- Fix indefinite load spinner for products without an image in order history. [#1284](https://github.com/bigcommerce/cornerstone/pull/1284)
+- Fix Webpack DefinePlugin configuration. [#1286](https://github.com/bigcommerce/cornerstone/pull/1286)
+- Disable zoom and link for default "No Image" image. [#1291](https://github.com/bigcommerce/cornerstone/pull/1291)
+- Fix for ESLint "quotes" and "quote-props" errors. [#1280](https://github.com/bigcommerce/cornerstone/pull/1280)
+- Fix cart link not being clickable on mobile when white space reduced around store logo [#1296](https://github.com/bigcommerce/cornerstone/pull/1296)
+
+## 2.2.0 (2018-06-22)
 - Fix quantity edit on Simple Product AMP pages. [#1257](https://github.com/bigcommerce/cornerstone/pull/1257)
 - Fix empty image on carousel wrap. [#1263](https://github.com/bigcommerce/cornerstone/pull/1263)
 - Fix duplicate IDs occurrence in product options in certain situations & syntax fix in bulk-discount-rates component [#1223](https://github.com/bigcommerce/cornerstone/pull/1223)
@@ -10,8 +40,7 @@
 - Fix arrow placement on currency dropdown menu [#1267](https://github.com/bigcommerce/cornerstone/pull/1267)
 - Add alias for lazysizes module to bundle minified library [#1275](https://github.com/bigcommerce/cornerstone/pull/1275)
 - Fix prices not showing in quick search while logged in when "Restrict to Login" for price display is true [#1272](https://github.com/bigcommerce/cornerstone/pull/1272)
-- Display product reviews in tabbed content region of product page [#1273](https://github.com/bigcommerce/cornerstone/pull/1273)
-- Disable zoom and link for default "No Image" image. [#1278](https://github.com/bigcommerce/cornerstone/pull/1278)
+- Fix duplicate input ID's in product review form [#1276](https://github.com/bigcommerce/cornerstone/pull/1276)
 
 ## 2.1.0 (2018-06-01)
 - Add Newsletter summary section to subscription form. [#1248](https://github.com/bigcommerce/cornerstone/pull/1248)

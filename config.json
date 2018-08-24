@@ -1,6 +1,6 @@
 {
   "name": "Cornerstone",
-  "version": "2.2.0-rc.1",
+  "version": "2.3.2",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -198,6 +198,7 @@
     "navPages-subMenu-backgroundColor": "#e5e5e5",
     "navPages-subMenu-separatorColor": "#cccccc",
     "dropdown--quickSearch-backgroundColor": "#e5e5e5",
+    "dropdown--wishList-backgroundColor": "#ffffff",
     "blockquote-cite-font-color": "#999999",
     "container-border-global-color-base": "#e5e5e5",
     "container-fill-base": "#ffffff",
@@ -464,6 +465,7 @@
         "navPages-subMenu-backgroundColor": "#555555",
         "navPages-subMenu-separatorColor": "#666666",
         "dropdown--quickSearch-backgroundColor": "#555555",
+        "dropdown--wishList-backgroundColor": "#555555",
         "blockquote-cite-font-color": "#999999",
         "container-border-global-color-base": "#666666",
         "container-fill-base": "#555555",
@@ -666,6 +668,7 @@
         "navPages-subMenu-backgroundColor": "#f2eee9",
         "navPages-subMenu-separatorColor": "#ccbdae",
         "dropdown--quickSearch-backgroundColor": "#f2eee9",
+        "dropdown--wishList-backgroundColor": "#f2eee9",
         "blockquote-cite-font-color": "#b39c88",
         "container-border-global-color-base": "#ccbdae",
         "container-fill-base": "#ffffff",
