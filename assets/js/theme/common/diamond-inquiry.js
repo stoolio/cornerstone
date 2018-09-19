@@ -3,7 +3,7 @@ import noUiSlider from './nouislider';
 
 const color = 'D E F G H I J'.split(' ');
 const clarity = 'FL IF VVS1 VVS2 VS1 VS2 SI1 SI2'.split(' ');
-const cut = ['Ideal', 'Excellent', 'Very Good', 'Good'];
+const cut = ['Excellent', 'Very Good', 'Good'];
 
 const formatter = function createFormatter(map) {
     return {
@@ -101,30 +101,41 @@ function keydownLogic(i, sld) {
         const v = Number(sld.get()[i]);
         const s = sld.steps()[i];
         let p;
+        let wasArrow = true;
         switch (e.which) {
         // up
         case 38:
-            p = s[1];
+            p = s[1] * 5;
             break;
         // down
         case 40:
-            p = -s[0];
+            p = -s[0] * 5;
             break;
         // left
         case 37:
-            p = -s[0] * 5;
+            p = -s[0];
             break;
         // right
         case 39:
-            p = s[0] * 5;
+            p = s[1];
             break;
+        // enter
+        case 13:
+            e.preventDefault();
+            $(e.target).blur();
+            return false;
         default:
+            wasArrow = false;
         }
         if (p === false) {
             p = 1;
         }
         if (p !== null && p !== undefined) {
-            sld.set(setSliderVal(v + p));
+            sld.set(setSliderVal(i, v + p));
+        }
+        if (wasArrow) {
+            e.preventDefault();
+            autoSelect(e);
         }
     };
 }
@@ -181,6 +192,10 @@ function rangeSlider(elId, arr) {
     });
 
     inputs.forEach((input, i) => {
+        // input.addEventListener('keydown', function (evt) {
+        //     evt.preventDefault();
+        //     return false;
+        // });
         input.addEventListener('change', function () {
             const index = offset.from(i, this.selectedIndex);
             // var values = slider.noUiSlider.get();

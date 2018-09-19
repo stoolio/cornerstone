@@ -17,6 +17,31 @@
 //   }
 // }
 
+@media (max-width: 599px) {
+  #sliders-container, #shape-selector-label {
+    &.form-field {
+      float: none !important;
+      width: 100% !important;
+      margin: 0 auto;
+    }
+  }
+
+  .slider-input-row .slider-input {
+    width: 40% !important;
+  }
+
+  div[data-value="25000"], div[data-value="300"], div[data-value="400"] {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  #priceSlider {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
 .form-field {
   select, input {
     font-size: 20px;
@@ -126,6 +151,9 @@
 
   .slider-input {
     @include grid-column($columns:3);
+    // @include breakpoint("small down") {
+    //   width: 43%;
+    // }
   }
 
   .dash {

@@ -1,11 +1,28 @@
 .shape-block-grid {
-  @include block-grid(2);
+  @media (max-width: 599px) {
+    @include block-grid(5);
+  }
+
+  @media (min-width: 600px) {
+    @include block-grid(2);
+  }
+
+  @media (max-width: 999px) {
+    span {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 1000px) {
+    span {
+      font-size: 14px;
+    }
+  }
 
   text-align: center;
 
   span {
     font-weight: bold;
-    font-size: 15px;
   }
 
   li {
@@ -18,9 +35,10 @@
     }
 
     div.shape {
-      height: 60px;
+      height: 53px;
       font-size: 35px;
       font-weight: bold;
+      line-height: 40px;
     }
 
     &.active {
