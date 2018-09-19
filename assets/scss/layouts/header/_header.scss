@@ -140,7 +140,7 @@
     padding: remCalc(3px) 0;
     text-overflow: ellipsis;
     text-transform: uppercase;
-    // white-space: nowrap;
+    white-space: nowrap;
 
     @include breakpoint("small") {
         font-size: $fontSize-logo-medium;
