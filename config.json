@@ -1,6 +1,6 @@
 {
   "name": "Cornerstone",
-  "version": "2.4.0",
+  "version": "3.2.0",
   "meta": {
     "price": 0,
     "documentation_url": "https://support.bigcommerce.com/articles/Public/Cornerstone-Theme-Manual",
@@ -30,7 +30,9 @@
       "one_page_check_out",
       "product_videos",
       "google_amp",
-      "customized_checkout"
+      "customized_checkout",
+      "account_payment_methods",
+      "enhanced_ecommerce"
     ]
   },
   "css_compiler": "scss",
@@ -45,6 +47,7 @@
     "homepage_featured_products_count": 4,
     "homepage_top_products_count": 4,
     "homepage_show_carousel": true,
+    "homepage_show_carousel_arrows": true,
     "homepage_stretch_carousel_images": false,
     "homepage_new_products_column_count": 4,
     "homepage_featured_products_column_count": 4,
@@ -59,6 +62,7 @@
     "brandpage_products_per_page": 12,
     "searchpage_products_per_page": 12,
     "show_product_quick_view": true,
+    "show_product_quantity_box": true,
     "show_powered_by": true,
     "shop_by_brand_show_footer": true,
     "show_copyright_footer": true,
@@ -75,7 +79,6 @@
     "logo-position": "center",
     "logo_size": "250x100",
     "logo_fontSize": 28,
-    "logo-font": "Google_Oswald_300",
     "brand_size": "190x250",
     "gallery_size": "300x300",
     "productgallery_size": "500x659",
@@ -85,9 +88,9 @@
     "thumb_size": "100x100",
     "zoom_size": "1280x1280",
     "blog_size": "190x250",
-    "default_image_brand": "/assets/img/BrandDefault.gif",
-    "default_image_product": "/assets/img/ProductDefault.gif",
-    "default_image_gift_certificate": "/assets/img/GiftCertificate.png",
+    "default_image_brand": "img/BrandDefault.gif",
+    "default_image_product": "img/ProductDefault.gif",
+    "default_image_gift_certificate": "img/GiftCertificate.png",
     "body-font": "Google_Karla_400",
     "headings-font": "Google_Montserrat_400",
     "fontSize-root": 14,
@@ -294,7 +297,21 @@
     "pdp-price-label": "",
     "pdp-sale-price-label": "Now:",
     "pdp-non-sale-price-label": "Was:",
-    "pdp-retail-price-label": "MSRP:"
+    "pdp-retail-price-label": "MSRP:",
+    "paymentbuttons-paypal-layout": "horizontal",
+    "paymentbuttons-paypal-color": "gold",
+    "paymentbuttons-paypal-shape": "pill",
+    "paymentbuttons-paypal-size": "small",
+    "paymentbuttons-paypal-label": "checkout",
+    "paymentbuttons-paypal-tagline": true,
+    "paymentbuttons-paypal-fundingicons": false,
+    "supported_card_type_icons": [
+      "american_express",
+      "diners",
+      "discover",
+      "mastercard",
+      "visa"
+    ]
   },
   "read_only_files": [
     "/assets/scss/components/citadel",
@@ -307,7 +324,7 @@
     "/assets/scss/vendor"
   ],
   "resources": {
-    "cart": true,
+    "cart": false,
     "bulk_discount_rates": false,
     "shop_by_brand": {
       "limit": 10

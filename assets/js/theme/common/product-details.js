@@ -1,11 +1,9 @@
-import $ from 'jquery';
 import utils from '@bigcommerce/stencil-utils';
 import 'foundation-sites/js/foundation/foundation';
 import 'foundation-sites/js/foundation/foundation.reveal';
 import ImageGallery from '../product/image-gallery';
-import modalFactory from '../global/modal';
+import modalFactory, { showAlertModal } from '../global/modal';
 import _ from 'lodash';
-import swal from 'sweetalert2';
 import Wishlist from '../wishlist';
 
 export default class ProductDetails {
@@ -27,6 +25,7 @@ export default class ProductDetails {
 
         $productOptionsElement.on('change', event => {
             this.productOptionsChanged(event);
+            this.setProductVariant();
         });
 
         $form.on('submit', event => {
@@ -76,6 +75,103 @@ export default class ProductDetails {
         return formData;
     }
 
+    setProductVariant() {
+        const unsatisfiedRequiredFields = [];
+        const options = [];
+
+        $.each($('[data-product-attribute]'), (index, value) => {
+            const optionLabel = value.children[0].innerText;
+            const optionTitle = optionLabel.split(':')[0].trim();
+            const required = optionLabel.toLowerCase().includes('required');
+            const type = value.getAttribute('data-product-attribute');
+
+            if ((type === 'input-file' || type === 'input-text' || type === 'input-number') && value.querySelector('input').value === '' && required) {
+                unsatisfiedRequiredFields.push(value);
+            }
+
+            if (type === 'textarea' && value.querySelector('textarea').value === '' && required) {
+                unsatisfiedRequiredFields.push(value);
+            }
+
+            if (type === 'date') {
+                const isSatisfied = Array.from(value.querySelectorAll('select')).every((select) => select.selectedIndex !== 0);
+
+                if (isSatisfied) {
+                    const dateString = Array.from(value.querySelectorAll('select')).map((x) => x.value).join('-');
+                    options.push(`${optionTitle}:${dateString}`);
+
+                    return;
+                }
+
+                if (required) {
+                    unsatisfiedRequiredFields.push(value);
+                }
+            }
+
+            if (type === 'set-select') {
+                const select = value.querySelector('select');
+                const selectedIndex = select.selectedIndex;
+
+                if (selectedIndex !== 0) {
+                    options.push(`${optionTitle}:${select.options[selectedIndex].innerText}`);
+
+                    return;
+                }
+
+                if (required) {
+                    unsatisfiedRequiredFields.push(value);
+                }
+            }
+
+            if (type === 'set-rectangle' || type === 'set-radio' || type === 'swatch' || type === 'input-checkbox' || type === 'product-list') {
+                const checked = value.querySelector(':checked');
+                if (checked) {
+                    if (type === 'set-rectangle' || type === 'set-radio' || type === 'product-list') {
+                        const label = checked.labels[0].innerText;
+                        if (label) {
+                            options.push(`${optionTitle}:${label}`);
+                        }
+                    }
+
+                    if (type === 'swatch') {
+                        const label = checked.labels[0].children[0];
+                        if (label) {
+                            options.push(`${optionTitle}:${label.title}`);
+                        }
+                    }
+
+                    if (type === 'input-checkbox') {
+                        options.push(`${optionTitle}:Yes`);
+                    }
+
+                    return;
+                }
+
+                if (type === 'input-checkbox') {
+                    options.push(`${optionTitle}:No`);
+                }
+
+                if (required) {
+                    unsatisfiedRequiredFields.push(value);
+                }
+            }
+        });
+
+        let productVariant = unsatisfiedRequiredFields.length === 0 ? options.sort().join(', ') : 'unsatisfied';
+        const view = $('.productView');
+
+        if (productVariant) {
+            productVariant = productVariant === 'unsatisfied' ? '' : productVariant;
+            if (view.attr('data-event-type')) {
+                view.attr('data-product-variant', productVariant);
+            } else {
+                const productName = view.find('.productView-title')[0].innerText;
+                const card = $(`[data-name="${productName}"]`);
+                card.attr('data-product-variant', productVariant);
+            }
+        }
+    }
+
     /**
      * Since $productView can be dynamically inserted using render_with,
      * We have to retrieve the respective elements
@@ -120,8 +216,14 @@ export default class ProductDetails {
                 $container: $('.form-field--stock', $scope),
                 $input: $('[data-product-stock]', $scope),
             },
-            $sku: $('[data-product-sku]'),
-            $upc: $('[data-product-upc]'),
+            sku: {
+                $label: $('dt.sku-label', $scope),
+                $value: $('[data-product-sku]', $scope),
+            },
+            upc: {
+                $label: $('dt.upc-label', $scope),
+                $value: $('[data-product-upc]', $scope),
+            },
             quantity: {
                 $text: $('.incrementTotal', $scope),
                 $input: $('[name=qty\\[\\]]', $scope),
@@ -272,17 +374,14 @@ export default class ProductDetails {
                 const tmp = document.createElement('DIV');
                 tmp.innerHTML = errorMessage;
 
-                return swal({
-                    text: tmp.textContent || tmp.innerText,
-                    type: 'error',
-                });
+                return showAlertModal(tmp.textContent || tmp.innerText);
             }
 
             // Open preview modal and update content
             if (this.previewModal) {
                 this.previewModal.open();
 
-                this.updateCartContent(this.previewModal, response.data.cart_item.hash);
+                this.updateCartContent(this.previewModal, response.data.cart_item.id);
             } else {
                 this.$overlay.show();
                 // if no modal, redirect to the cart page
@@ -294,14 +393,14 @@ export default class ProductDetails {
     /**
      * Get cart contents
      *
-     * @param {String} cartItemHash
+     * @param {String} cartItemId
      * @param {Function} onComplete
      */
-    getCartContent(cartItemHash, onComplete) {
+    getCartContent(cartItemId, onComplete) {
         const options = {
             template: 'cart/preview',
             params: {
-                suggest: cartItemHash,
+                suggest: cartItemId,
             },
             config: {
                 cart: {
@@ -332,11 +431,11 @@ export default class ProductDetails {
      * Update cart content
      *
      * @param {Modal} modal
-     * @param {String} cartItemHash
+     * @param {String} cartItemId
      * @param {Function} onComplete
      */
-    updateCartContent(modal, cartItemHash, onComplete) {
-        this.getCartContent(cartItemHash, (err, response) => {
+    updateCartContent(modal, cartItemId, onComplete) {
+        this.getCartContent(cartItemId, (err, response) => {
             if (err) {
                 return;
             }
@@ -459,12 +558,20 @@ export default class ProductDetails {
 
         // If SKU is available
         if (data.sku) {
-            viewModel.$sku.text(data.sku);
+            viewModel.sku.$value.text(data.sku);
+            viewModel.sku.$label.show();
+        } else {
+            viewModel.sku.$label.hide();
+            viewModel.sku.$value.text('');
         }
 
         // If UPC is available
         if (data.upc) {
-            viewModel.$upc.text(data.upc);
+            viewModel.upc.$value.text(data.upc);
+            viewModel.upc.$label.show();
+        } else {
+            viewModel.upc.$label.hide();
+            viewModel.upc.$value.text('');
         }
 
         // if stock view is on (CP settings)

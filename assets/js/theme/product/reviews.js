@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import nod from '../common/nod';
 import { CollapsibleEvents } from '../common/collapsible';
 import forms from '../common/models/forms';
@@ -65,11 +64,11 @@ export default class {
             errorMessage: this.context.reviewRating,
         }, {
             selector: '[name="revtitle"]',
-            validate: 'min-length:2',
+            validate: 'presence',
             errorMessage: this.context.reviewSubject,
         }, {
             selector: '[name="revtext"]',
-            validate: 'min-length:2',
+            validate: 'presence',
             errorMessage: this.context.reviewComment,
         }, {
             selector: '[name="email"]',

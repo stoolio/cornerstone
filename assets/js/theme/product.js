@@ -1,7 +1,6 @@
 /*
  Import all product specific js
  */
-import $ from 'jquery';
 import PageManager from './page-manager';
 import Review from './product/reviews';
 import collapsibleFactory from './common/collapsible';
@@ -31,6 +30,7 @@ export default class Product extends PageManager {
         collapsibleFactory();
 
         this.productDetails = new ProductDetails($('.productView'), this.context, window.BCData.product_attributes);
+        this.productDetails.setProductVariant();
 
         videoGallery();
 
