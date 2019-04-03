@@ -2,6 +2,23 @@
 
 ## Draft
 
+## 3.4.0 (2019-04-03)
+- Explicitly disable autocomplete in password entry input fields. [#1465](https://github.com/bigcommerce/cornerstone/pull/1465)
+- Fixed update product qty by typing the new qty in the cart page (not with the arrows). [#1469](https://github.com/bigcommerce/cornerstone/pull/1469)
+
+## 3.3.0 (2019-03-18)
+- Add option to hide breadcrumbs and page title. [#1444](https://github.com/bigcommerce/cornerstone/pull/1444)
+
+## 3.2.2 (2019-02-26)
+- Resolve add to cart modal mobile isssue. [#1450](https://github.com/bigcommerce/cornerstone/pull/1450)
+- Fail stencil bundle on Webpack compile errors [#1457](https://github.com/bigcommerce/cornerstone/pull/1457)
+
+## 3.2.1 (2019-02-15)
+- Added package-lock.json. [#1441](https://github.com/bigcommerce/cornerstone/pull/1441)
+- Product description in Compare no longer shows escaped HTML. [#1439](https://github.com/bigcommerce/cornerstone/pull/1439)
+- Removed href="#" from quick view button. [#1445](https://github.com/bigcommerce/cornerstone/pull/1445)
+- Removed href="#" from quick view list item. [#1446](https://github.com/bigcommerce/cornerstone/pull/1446)
+
 ## 3.2.0 (2019-02-05)
 - Align product thumbnail image slider arrows. [#1399](https://github.com/bigcommerce/cornerstone/pull/1399)
 - Don't fire Cart API request if there is no cart [#1402](https://github.com/bigcommerce/cornerstone/pull/1402)
@@ -9,7 +26,6 @@
 - Corrected IDs in date.html form fields. [#1433](https://github.com/bigcommerce/cornerstone/pull/1433)
 - Cleanup and XSS fix on Cart page. [#1434](https://github.com/bigcommerce/cornerstone/pull/1434)
 - Fix for product without image on Compare page. [#1438](https://github.com/bigcommerce/cornerstone/pull/1438)
-
 - Resolve settings scope passed to components. [#1435](https://github.com/bigcommerce/cornerstone/pull/1435)
 
 ## 3.1.1 (2019-01-23)

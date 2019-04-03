@@ -1,7 +1,7 @@
 {
   "name": "bigcommerce-cornerstone",
   "description": "The BigCommerce reference theme for the Stencil platform",
-  "version": "3.2.0",
+  "version": "3.4.0",
   "private": true,
   "author": "BigCommerce",
   "license": "MIT",
@@ -12,21 +12,11 @@
     "easyzoom": "^2.5.0",
     "foundation-sites": "^5.5.3",
     "jquery": "^3.3.1",
-<<<<<<< HEAD
-    "jquery-migrate": "^1.4.1",
-    "jstree": "github:vakata/jstree",
-    "lazysizes": "3.0.0",
-=======
     "jstree": "vakata/jstree",
     "lazysizes": "4.1.2",
->>>>>>> f0b5c3148cade9947d85356f2656299102bd8443
     "lodash": "^4.17.4",
     "nanobar": "^0.4.2",
     "nod-validate": "^2.0.12",
-<<<<<<< HEAD
-    "pace": "github:hubspot/pace#a03f1f1de62c9cea6c88b2267b8d7a83858b6cb6",
-=======
->>>>>>> f0b5c3148cade9947d85356f2656299102bd8443
     "slick-carousel": "^1.8.1",
     "svg-injector": "^1.1.3",
     "sweetalert2": "^6.11.5"
