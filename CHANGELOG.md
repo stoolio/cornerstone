@@ -2,6 +2,22 @@
 
 ## Draft
 
+## 3.4.3 (2019-05-10)
+- Fix to open Bulk Pricing modal from Quick View. [#1483](https://github.com/bigcommerce/cornerstone/pull/1483)
+- Update default layout settings for PayPal smart buttons [#1486](https://github.com/bigcommerce/cornerstone/pull/1486)
+
+## 3.4.2 (2019-04-30)
+- Remove deprecated "snippet" locations [#1479](https://github.com/bigcommerce/cornerstone/pull/1479)
+- Fix dropdown cart not showing discounts [#1481](https://github.com/bigcommerce/cornerstone/pull/1481)
+- Fix mobile banner text displaying with underline on mobile. [#1482](https://github.com/bigcommerce/cornerstone/pull/1482)
+- Add option to display custom fields under "Specifications" tab on PDP [#1480](https://github.com/bigcommerce/cornerstone/pull/1480)
+
+## 3.4.1 (2019-04-11)
+- Sanitize faceted search item's title [#1426](https://github.com/bigcommerce/cornerstone/pull/1426)
+- Fixed the filtering issues with price range filter selection [#1471](https://github.com/bigcommerce/cornerstone/pull/1471)
+- Fix submenu click on mobile navigation [#1472](https://github.com/bigcommerce/cornerstone/pull/1472)
+- Update support URL [#1474](https://github.com/bigcommerce/cornerstone/pull/1474)
+
 ## 3.4.0 (2019-04-03)
 - Explicitly disable autocomplete in password entry input fields. [#1465](https://github.com/bigcommerce/cornerstone/pull/1465)
 - Fixed update product qty by typing the new qty in the cart page (not with the arrows). [#1469](https://github.com/bigcommerce/cornerstone/pull/1469)
@@ -88,12 +104,12 @@
 - Add support for Paypal smart buttons settings [#1359](https://github.com/bigcommerce/cornerstone/pull/1359)
 
 ## 2.4.0 (2018-09-14)
-- Fix encoding issues on Account Signup Form ("&#039;" characters showing in country name)[#1341] (https://github.com/bigcommerce/cornerstone/pull/1341)
+- Fix encoding issues on Account Signup Form ("&#039;" characters showing in country name) [#1341](https://github.com/bigcommerce/cornerstone/pull/1341)
 - Require Webpack config only when used (reduce time to be ready for receiving messages from stencil-cli). [#1334](https://github.com/bigcommerce/cornerstone/pull/1334)
 - Fixed amp page error related to store logo [#1323](https://github.com/bigcommerce/cornerstone/pull/1323)
 - Add link to order status in account menu when viewing order [#1343](https://github.com/bigcommerce/cornerstone/pull/1343)
 - Update cart when quantity changed manually (without using the increase and decrease arrows). [#1338](https://github.com/bigcommerce/cornerstone/pull/1338)
-- Fix option set. Selection from option set that containes multiple similar options. [1347] (https://github.com/bigcommerce/cornerstone/pull/1347)
+- Fix option set. Selection from option set that containes multiple similar options. [#1347](https://github.com/bigcommerce/cornerstone/pull/1347)
 
 ## 2.3.2 (2018-08-17)
 - Fix zoom behavior for small images in gallery (turn off zoom if image is too small). [#1325](https://github.com/bigcommerce/cornerstone/pull/1325)
