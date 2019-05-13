@@ -58,7 +58,9 @@
 }
 
 .footer-info-col--social {
-    width: 100%;
+    @include breakpoint("medium") {
+        width: width("2/12");
+    }
 }
 
 .footer-info-col--left {

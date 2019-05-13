@@ -14,6 +14,7 @@ import carousel from './common/carousel';
 import 'lazysizes';
 import loadingProgressBar from './global/loading-progress-bar';
 import svgInjector from './global/svg-injector';
+import { forceIncludeRecaptcha } from './global/recaptcha-helpers';
 
 export default class Global extends PageManager {
     onReady() {
@@ -34,5 +35,10 @@ export default class Global extends PageManager {
         maintenanceMode(this.context.maintenanceMode);
         loadingProgressBar();
         svgInjector();
+
+        // load recaptcha js on pages with quickview so inquire button form works via quickview
+        if (document.querySelectorAll('.quickview').length > 0) {
+            forceIncludeRecaptcha();
+        }
     }
 }

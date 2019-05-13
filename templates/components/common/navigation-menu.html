@@ -21,7 +21,7 @@
             </li>
         {{/each}}
         {{#unless theme_settings.hide_content_navigation}}
-            {{#each (after pages 2)}}
+            {{#each (after pages 3)}}
                  <li class="navPages-item navPages-item-page">
                      <a class="navPages-action{{#if name '==' ../page.title}} activePage{{/if}}" href="{{url}}">{{name}}</a>
                  </li>

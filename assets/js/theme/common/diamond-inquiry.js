@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import noUiSlider from './nouislider';
+import noUiSlider from 'nouislider';
 
 const color = 'D E F G H I J'.split(' ');
 const clarity = 'FL IF VVS1 VVS2 VS1 VS2 SI1 SI2'.split(' ');
